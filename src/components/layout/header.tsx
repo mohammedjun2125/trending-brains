@@ -8,40 +8,15 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { useState, useEffect } from "react";
 
 const navLinks = [
   { href: "/programs", label: "Programs" },
   { href: "/community", label: "Community" },
+  { href: "/about", label: "About Us"},
   { href: "/contact", label: "Contact" },
 ];
 
 export function Header() {
-  // Mock authentication state
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  const handleLogin = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setIsAuthenticated(true);
-  };
-  
-  const handleLogout = () => {
-    setIsAuthenticated(false);
-  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -66,41 +41,6 @@ export function Header() {
           </nav>
         </div>
         <div className="flex flex-1 items-center justify-end space-x-2">
-          {isClient && (
-            isAuthenticated ? (
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-                    <Avatar className="h-8 w-8">
-                      <AvatarImage src="https://picsum.photos/seed/100/100/100" alt="User avatar" />
-                      <AvatarFallback>U</AvatarFallback>
-                    </Avatar>
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56" align="end" forceMount>
-                  <DropdownMenuLabel className="font-normal">
-                    <div className="flex flex-col space-y-1">
-                      <p className="text-sm font-medium leading-none">Valued Member</p>
-                      <p className="text-xs leading-none text-muted-foreground">
-                        user@example.com
-                      </p>
-                    </div>
-                  </DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={handleLogout}>Log out</DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            ) : (
-              <div className="hidden md:flex md:space-x-2">
-                  <Button variant="ghost" asChild>
-                      <Link href="/auth/login" onClick={handleLogin}>Log In</Link>
-                  </Button>
-                  <Button asChild>
-                      <Link href="/auth/signup">Sign Up</Link>
-                  </Button>
-              </div>
-            )
-          )}
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
@@ -119,20 +59,6 @@ export function Header() {
                     {link.label}
                   </Link>
                 ))}
-                <div className="mt-4 border-t pt-4">
-                  {isClient && (isAuthenticated ? (
-                     <Button variant="ghost" onClick={handleLogout} className="w-full justify-start text-lg">Log out</Button>
-                  ) : (
-                    <div className="flex flex-col space-y-2">
-                      <Button variant="ghost" asChild className="w-full justify-start text-lg">
-                        <Link href="/auth/login" onClick={handleLogin}>Log In</Link>
-                      </Button>
-                      <Button asChild className="w-full text-lg">
-                        <Link href="/auth/signup">Sign Up</Link>
-                      </Button>
-                    </div>
-                  ))}
-                </div>
               </div>
             </SheetContent>
           </Sheet>
