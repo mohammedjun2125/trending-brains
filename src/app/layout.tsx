@@ -3,6 +3,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 
 export const metadata: Metadata = {
   title: "Trending Brains Academy",
@@ -30,6 +31,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
+        <WhatsAppButton />
         <Toaster />
       </body>
     </html>
