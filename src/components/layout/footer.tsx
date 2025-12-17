@@ -1,5 +1,5 @@
 "use client";
-import { BrainCircuit } from 'lucide-react';
+import { BrainCircuit, Instagram, Youtube } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -43,7 +43,17 @@ export function Footer() {
             </div>
             <div>
                 <h4 className="font-semibold mb-3">Connect With Us</h4>
-                <p className="text-sm text-muted-foreground">Stay up to date with our latest news and offers.</p>
+                <p className="text-sm text-muted-foreground mb-3">Stay up to date with our latest news and offers.</p>
+                <div className="flex space-x-4">
+                    <Link href="#" className="text-muted-foreground hover:text-foreground">
+                        <Instagram className="h-6 w-6" />
+                        <span className="sr-only">Instagram</span>
+                    </Link>
+                    <Link href="#" className="text-muted-foreground hover:text-foreground">
+                        <Youtube className="h-6 w-6" />
+                        <span className="sr-only">YouTube</span>
+                    </Link>
+                </div>
             </div>
         </div>
          <div className="mt-8 border-t pt-6 text-center text-sm text-muted-foreground">
