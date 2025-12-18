@@ -1,13 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { BrainCircuit, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { CustomLogo } from "./CustomLogo";
 
 const navLinks = [
   { href: "/programs", label: "Programs" },
@@ -21,7 +22,7 @@ export function Header() {
       <div className="container flex h-16 items-center">
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <BrainCircuit className="h-6 w-6 text-accent" />
+            <CustomLogo className="h-6 w-6 text-accent" />
             <span className="font-bold font-headline sm:inline-block">
               Trending Brains
             </span>

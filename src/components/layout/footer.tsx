@@ -1,7 +1,8 @@
 "use client";
-import { BrainCircuit, Instagram, Youtube } from 'lucide-react';
+import { Instagram, Youtube } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { CustomLogo } from './CustomLogo';
 
 export function Footer() {
   const [year, setYear] = useState(new Date().getFullYear());
@@ -16,7 +17,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="flex flex-col gap-4">
                  <Link href="/" className="flex items-center space-x-2">
-                    <BrainCircuit className="h-6 w-6 text-accent" />
+                    <CustomLogo className="h-6 w-6 text-accent" />
                     <span className="font-bold font-headline sm:inline-block">
                     Trending Brains
                     </span>
