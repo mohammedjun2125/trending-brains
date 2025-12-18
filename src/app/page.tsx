@@ -67,7 +67,7 @@ export default function Home() {
                   <Link href="/programs">Explore Programs</Link>
                 </Button>
                 <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-black">
-                  <Link href="/contact">Contact Us</Link>
+                  <Link href="/about">About Us</Link>
                 </Button>
               </div>
             </div>
@@ -116,6 +116,7 @@ export default function Home() {
                             <CardFooter className="mt-auto">
                                 <Button asChild variant="outline" className="w-full">
                                     <Link href={`/programs/${program.slug}`}>Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
+
                                 </Button>
                             </CardFooter>
                         </Card>

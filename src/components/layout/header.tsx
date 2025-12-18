@@ -12,7 +12,6 @@ import {
 const navLinks = [
   { href: "/programs", label: "Programs" },
   { href: "/about", label: "About Us"},
-  { href: "/contact", label: "Contact" },
 ];
 
 export function Header() {
