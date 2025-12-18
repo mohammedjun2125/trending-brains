@@ -8,6 +8,9 @@ import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 export const metadata: Metadata = {
   title: "Trending Brains Academy",
   description: "Empowering women through education and entrepreneurship.",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
