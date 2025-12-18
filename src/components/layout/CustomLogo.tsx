@@ -7,9 +7,9 @@ export function CustomLogo() {
     <Image
       src="/logo.png" // Assumes your logo is named 'logo.png' in the 'public' folder
       alt="Trending Brains Logo"
-      width={24}
-      height={24}
-      className="h-6 w-6" // This maintains the size consistent with the old SVG icon
+      width={36}
+      height={36}
+      className="h-9 w-9"
     />
   );
 }
