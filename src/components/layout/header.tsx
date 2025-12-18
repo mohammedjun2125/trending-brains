@@ -22,7 +22,7 @@ export function Header() {
       <div className="container flex h-16 items-center">
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <CustomLogo className="h-6 w-6 text-accent" />
+            <CustomLogo />
             <span className="font-bold font-headline sm:inline-block">
               Trending Brains
             </span>

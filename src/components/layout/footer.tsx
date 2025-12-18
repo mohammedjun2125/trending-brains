@@ -17,7 +17,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="flex flex-col gap-4">
                  <Link href="/" className="flex items-center space-x-2">
-                    <CustomLogo className="h-6 w-6 text-accent" />
+                    <CustomLogo />
                     <span className="font-bold font-headline sm:inline-block">
                     Trending Brains
                     </span>
