@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Trending Brains Academy",
   description: "Empowering women through education and entrepreneurship.",
   icons: {
-    icon: "/icon.png?v=2",
+    icon: "/icon.png",
   },
 };
 
