@@ -36,7 +36,6 @@ const testimonials = [
 ];
 
 export default function Home() {
-  const heroImage = placeholderImages.placeholderImages.find(p => p.id === "hero-image");
   const featuredPrograms = programs.slice(0, 3); // Take first 3 programs to feature
 
   return (
@@ -44,16 +43,13 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative w-full py-24 md:py-32 lg:py-40">
-           {heroImage && (
-            <Image
-              src={heroImage.imageUrl}
-              alt={heroImage.description}
+           <Image
+              src="/my-hero-image.jpg"
+              alt="Hero image for Trending Brains Academy"
               fill
               className="object-cover object-center -z-10 brightness-50"
-              data-ai-hint={heroImage.imageHint}
               priority
             />
-          )}
           <div className="container px-4 md:px-6 text-center text-primary-foreground">
             <div className="max-w-3xl mx-auto">
               <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
