@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ArrowRight, Star } from "lucide-react";
-import placeholderImages from "@/lib/placeholder-images.json";
 import { programs } from "@/lib/programs";
 
 const testimonials = [
@@ -29,8 +28,6 @@ const testimonials = [
 ];
 
 export default function Home() {
-  const heroImage = placeholderImages.placeholderImages.find(p => p.id === "hero-image");
-
   // Exclude the Women Empowerment program from the main featured list on the homepage
   const featuredPrograms = programs.filter(p => p.slug !== 'women-empowerment-initiative').slice(0, 2);
   const womenEmpowermentProgram = programs.find(p => p.slug === 'women-empowerment-initiative');
@@ -41,16 +38,14 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative w-full py-24 md:py-32 lg:py-40">
-          {heroImage && (
-             <Image
-              src={heroImage.imageUrl}
-              alt={heroImage.description}
-              fill
-              className="object-cover object-center -z-10 brightness-50"
-              priority
-              data-ai-hint={heroImage.imageHint}
-            />
-          )}
+           <Image
+            src="/my-hero-image.jpg"
+            alt="A group of diverse women collaborating in a bright, modern workspace."
+            fill
+            className="object-cover object-center -z-10 brightness-50"
+            priority
+            data-ai-hint="women collaborating"
+          />
           <div className="container px-4 md:px-6 text-center text-primary-foreground">
             <div className="max-w-3xl mx-auto">
               <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
