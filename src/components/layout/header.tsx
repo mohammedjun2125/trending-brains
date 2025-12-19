@@ -7,8 +7,10 @@ import {
   Sheet,
   SheetContent,
   SheetTrigger,
+  SheetClose,
 } from "@/components/ui/sheet";
 import { CustomLogo } from "./CustomLogo";
+import * as React from "react";
 
 const navLinks = [
   { href: "/programs", label: "Programs" },
@@ -18,6 +20,7 @@ const navLinks = [
 ];
 
 export function Header() {
+  const [isSheetOpen, setIsSheetOpen] = React.useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -44,7 +47,7 @@ export function Header() {
         </nav>
 
         <div className="md:hidden">
-          <Sheet>
+          <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
                 <Menu className="h-5 w-5" />
@@ -54,13 +57,14 @@ export function Header() {
             <SheetContent side="right">
               <div className="flex flex-col pt-8">
                 {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="block px-4 py-2 text-lg text-foreground/80 hover:text-foreground"
-                  >
-                    {link.label}
-                  </Link>
+                    <SheetClose asChild key={link.href}>
+                        <Link
+                            href={link.href}
+                            className="block px-4 py-2 text-lg text-foreground/80 hover:text-foreground"
+                        >
+                            {link.label}
+                        </Link>
+                  </SheetClose>
                 ))}
               </div>
             </SheetContent>
