@@ -1,11 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Mail, Phone } from "lucide-react";
 import Link from "next/link";
+import { WHATSAPP_LINK, WHATSAPP_NUMBER } from "@/lib/config";
 
 export default function ContactPage() {
-    const phoneNumber = "919700051427";
-    const whatsappLink = `https://wa.me/${phoneNumber}`;
-  
   return (
     <div className="container py-12 md:py-16">
       <div className="max-w-3xl mx-auto text-center">
@@ -29,7 +27,7 @@ export default function ContactPage() {
                 </div>
                  <div className="flex items-center gap-4">
                     <Phone className="h-5 w-5 text-accent" />
-                    <span className="text-muted-foreground">+91 97000 51427</span>
+                    <span className="text-muted-foreground">+{WHATSAPP_NUMBER}</span>
                 </div>
             </div>
              
@@ -37,7 +35,7 @@ export default function ContactPage() {
                 <h3 className="text-xl font-bold font-headline">Connect on WhatsApp</h3>
                 <p className="text-sm text-muted-foreground">For a quick response, chat with us directly on WhatsApp.</p>
                 <Button size="lg" className="w-full" asChild>
-                   <Link href={whatsappLink} target="_blank">
+                   <Link href={WHATSAPP_LINK} target="_blank">
                     Chat on WhatsApp
                    </Link>
                  </Button>

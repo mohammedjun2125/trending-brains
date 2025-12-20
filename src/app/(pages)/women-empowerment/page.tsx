@@ -13,6 +13,7 @@ import { CheckCircle } from "lucide-react";
 import placeholderImages from "@/lib/placeholder-images.json";
 import { programs } from "@/lib/programs";
 import { ArrowRight } from "lucide-react";
+import { generateWhatsappLink, WHATSAPP_LINK } from "@/lib/config";
 
 const stats = [
   { value: "10,000+", label: "Women Trained" },
@@ -21,17 +22,14 @@ const stats = [
   { value: "98%", label: "Placement Rate" },
 ];
 
-const phoneNumber = "919700051427";
-const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent("Hello! I'm interested in the Women Empowerment initiative.")}`;
-
-
 export default function WomenEmpowermentPage() {
   const heroImage = placeholderImages.placeholderImages.find(p => p.id === "hero-image");
   const communityImage = placeholderImages.placeholderImages.find(p => p.id === "community-banner");
   
   const empowermentProgram = programs.find(p => p.slug === 'women-empowerment-initiative');
 
-  const programWhatsappLink = empowermentProgram ? `https://wa.me/${phoneNumber}?text=${encodeURIComponent(`Hello! I'm interested in enrolling in the "${empowermentProgram.title}" program.`)}` : whatsappLink;
+  const programWhatsappLink = empowermentProgram ? generateWhatsappLink(`Hello! I'm interested in enrolling in the "${empowermentProgram.title}" program.`) : WHATSAPP_LINK;
+  const initiativeWhatsappLink = generateWhatsappLink("Hello! I'm interested in the Women Empowerment initiative.");
 
 
   return (
@@ -60,7 +58,7 @@ export default function WomenEmpowermentPage() {
               </p>
               <div className="mt-8">
                 <Button size="lg" asChild>
-                  <Link href={whatsappLink} target="_blank">Join The Initiative</Link>
+                  <Link href={initiativeWhatsappLink} target="_blank">Join The Initiative</Link>
                 </Button>
               </div>
             </div>
@@ -171,7 +169,7 @@ export default function WomenEmpowermentPage() {
                     </p>
                     <div className="mt-8">
                         <Button size="lg" variant="secondary" asChild>
-                             <Link href={whatsappLink} target="_blank">Start Your Journey Now</Link>
+                             <Link href={initiativeWhatsappLink} target="_blank">Start Your Journey Now</Link>
                         </Button>
                     </div>
                 </div>

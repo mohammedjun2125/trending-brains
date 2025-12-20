@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { programs } from '@/lib/programs';
 import type { Program } from '@/lib/programs';
 import { notFound } from 'next/navigation';
+import { generateWhatsappLink } from '@/lib/config';
 
 export default function ProgramDetailContent({ slug }: { slug: string }) {
   const program = programs.find((p) => p.slug === slug);
@@ -16,9 +17,8 @@ export default function ProgramDetailContent({ slug }: { slug: string }) {
 
   const ProgramIcon = program.icon;
 
-  const phoneNumber = "919700051427";
   const message = `Hello! I'm interested in enrolling in the "${program.title}" program.`;
-  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  const whatsappLink = generateWhatsappLink(message);
 
   return (
     <div className="container max-w-4xl mx-auto py-12 md:py-16">
