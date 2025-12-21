@@ -5,6 +5,15 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Blog',
+    description: 'Explore articles on career development, AI tools, entrepreneurship, and success stories from the Trending Brains Academy community.',
+    alternates: {
+        canonical: '/blog',
+    },
+};
 
 export default function BlogPage() {
   return (

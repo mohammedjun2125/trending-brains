@@ -2,6 +2,15 @@ import { Button } from "@/components/ui/button";
 import { Mail, Phone } from "lucide-react";
 import Link from "next/link";
 import { WHATSAPP_LINK, WHATSAPP_NUMBER } from "@/lib/config";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description: "Get in touch with Trending Brains Academy. We're here to answer your questions about our programs, partnerships, or anything else. Contact us via email, phone, or WhatsApp.",
+  alternates: {
+    canonical: "/contact",
+  },
+};
 
 export default function ContactPage() {
   return (

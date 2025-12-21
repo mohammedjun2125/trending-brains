@@ -4,11 +4,49 @@ import { posts } from '@/lib/blog';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 
 export function generateStaticParams() {
   return posts.map((post) => ({
     slug: post.slug,
   }));
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const post = posts.find((p) => p.slug === params.slug);
+  if (!post) {
+    return {};
+  }
+
+  return {
+    title: post.title,
+    description: post.description,
+    keywords: post.tags,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: 'article',
+      publishedTime: new Date(post.date).toISOString(),
+      authors: [post.author],
+      images: [
+        {
+          url: post.image,
+          width: 800,
+          height: 400,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description,
+      images: [post.image],
+    },
+    alternates: {
+      canonical: `/blog/${post.slug}`,
+    },
+  };
 }
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {

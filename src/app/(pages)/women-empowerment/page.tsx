@@ -14,6 +14,16 @@ import placeholderImages from "@/lib/placeholder-images.json";
 import { programs } from "@/lib/programs";
 import { ArrowRight } from "lucide-react";
 import { generateWhatsappLink, WHATSAPP_LINK } from "@/lib/config";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Women Empowerment Initiative",
+  description: "Join the Trending Brains Academy's Women Empowerment Initiative. We provide training, mentorship, and a network to help women launch businesses and excel as leaders.",
+  keywords: ["women empowerment", "female entrepreneurs", "leadership for women", "women in business", "Trending Brains Academy"],
+  alternates: {
+    canonical: "/women-empowerment",
+  },
+};
 
 const stats = [
   { value: "10,000+", label: "Women Trained" },

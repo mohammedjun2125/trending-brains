@@ -37,7 +37,7 @@ export default function ProgramsPage() {
           Our Programs
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-muted-foreground md:text-xl">
-          Invest in yourself. Our programs are designed to provide practical skills for the modern workplace.
+          Invest in yourself. Our programs are designed to provide practical skills for the modern workplace, including digital marketing, full-stack development, and leadership.
         </p>
       </div>
 

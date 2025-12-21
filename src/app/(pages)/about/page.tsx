@@ -1,5 +1,14 @@
 import Image from "next/image";
 import placeholderImages from "@/lib/placeholder-images.json";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "Learn about the mission, vision, and story of Trending Brains Academy. We are dedicated to empowering women worldwide through high-quality online education.",
+  alternates: {
+    canonical: "/about",
+  },
+};
 
 export default function AboutPage() {
     const aboutImage = placeholderImages.placeholderImages.find(p => p.id === "hero-image");
