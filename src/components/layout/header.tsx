@@ -14,6 +14,8 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuGroup,
+  DropdownMenuLabel,
 } from "@/components/ui/dropdown-menu";
 import { CustomLogo } from "./CustomLogo";
 import { programs } from "@/lib/programs";
@@ -21,12 +23,25 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { generateWhatsappLink } from "@/lib/config";
 import { Input } from "@/components/ui/input";
+import { useRouter } from "next/navigation";
+
 
 const techPrograms = programs.filter(p => p.slug !== 'women-empowerment-initiative' && (p.slug.includes('development') || p.slug.includes('design') || p.slug.includes('marketing')));
 const leadershipPrograms = programs.filter(p => p.slug.includes('leadership'));
 
 export function Header() {
   const [isSearchOpen, setIsSearchOpen] = React.useState(false);
+  const router = useRouter();
+
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const searchQuery = formData.get('search') as string;
+    if(searchQuery.trim()){
+      router.push(`/programs?search=${searchQuery}`);
+      setIsSearchOpen(false);
+    }
+  }
 
   const enrollLink = generateWhatsappLink("Hello! I'm interested in enrolling in one of your programs.");
 
@@ -50,34 +65,36 @@ export function Header() {
 
         <nav className="hidden items-center gap-6 text-sm md:flex">
           <DropdownMenu>
-            <DropdownMenuTrigger className="text-foreground/60 transition-colors hover:text-foreground/80 flex items-center gap-1 outline-none">
-              Programs
+            <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="text-foreground/60 transition-colors hover:text-foreground/80 flex items-center gap-1 outline-none">
+                Programs
+                </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem asChild>
-                <Link href="/programs">All Programs</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                 <Link href="/women-empowerment">Women Empowerment</Link>
-              </DropdownMenuItem>
+            <DropdownMenuContent className="w-56">
+                <DropdownMenuItem asChild>
+                    <Link href="/programs">All Programs</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                    <Link href="/women-empowerment">Women Empowerment</Link>
+                </DropdownMenuItem>
               
-              {techPrograms.length > 0 && <DropdownMenuTrigger asChild>
-                  <h3 className="text-sm font-semibold px-2 py-1.5">Tech Courses</h3>
-              </DropdownMenuTrigger>}
-              {techPrograms.map(p => (
-                <DropdownMenuItem key={p.slug} asChild>
-                  <Link href={`/programs/${p.slug}`}>{p.title}</Link>
-                </DropdownMenuItem>
-              ))}
+              {techPrograms.length > 0 && <DropdownMenuGroup>
+                <DropdownMenuLabel>Tech Courses</DropdownMenuLabel>
+                {techPrograms.map(p => (
+                    <DropdownMenuItem key={p.slug} asChild>
+                    <Link href={`/programs/${p.slug}`}>{p.title}</Link>
+                    </DropdownMenuItem>
+                ))}
+              </DropdownMenuGroup>}
 
-              {leadershipPrograms.length > 0 && <DropdownMenuTrigger asChild>
-                  <h3 className="text-sm font-semibold px-2 py-1.5">Leadership</h3>
-              </DropdownMenuTrigger>}
-              {leadershipPrograms.map(p => (
-                <DropdownMenuItem key={p.slug} asChild>
-                  <Link href={`/programs/${p.slug}`}>{p.title}</Link>
-                </DropdownMenuItem>
-              ))}
+              {leadershipPrograms.length > 0 && <DropdownMenuGroup>
+                <DropdownMenuLabel>Leadership</DropdownMenuLabel>
+                {leadershipPrograms.map(p => (
+                    <DropdownMenuItem key={p.slug} asChild>
+                    <Link href={`/programs/${p.slug}`}>{p.title}</Link>
+                    </DropdownMenuItem>
+                ))}
+              </DropdownMenuGroup>}
             </DropdownMenuContent>
           </DropdownMenu>
 
@@ -103,13 +120,13 @@ export function Header() {
             </Button>
           </div>
           
-          <div className={cn("hidden md:flex items-center gap-2", { 'flex': isSearchOpen, 'hidden': !isSearchOpen })}>
-              <Input type="search" placeholder="Search courses..." className="w-64" />
-              <Button variant="ghost" size="icon" onClick={() => setIsSearchOpen(false)}>
+          <form onSubmit={handleSearch} className={cn("hidden md:flex items-center gap-2", { 'flex': isSearchOpen, 'hidden': !isSearchOpen })}>
+              <Input type="search" name="search" placeholder="Search courses..." className="w-64" />
+              <Button variant="ghost" size="icon" type="button" onClick={() => setIsSearchOpen(false)}>
                   <X className="h-5 w-5" />
                   <span className="sr-only">Close search</span>
               </Button>
-          </div>
+          </form>
 
           <div className="md:hidden">
             <Sheet>

@@ -57,7 +57,7 @@ export default function ProgramDetailContent({ slug }: { slug: string }) {
             </section>
         </main>
         
-        <aside className="space-y-6">
+        <aside className="space-y-6 md:col-span-1">
             <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
                  <h3 className="text-xl font-bold font-headline mb-4">Course Details</h3>
                  <div className="space-y-3 text-sm">
