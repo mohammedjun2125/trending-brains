@@ -37,16 +37,19 @@ export default function Home() {
     <div className="flex flex-col min-h-[100dvh]">
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative w-full py-24 md:py-32 lg:py-40">
-           <Image
-            src="/my-hero-image.jpg"
-            alt="A group of diverse women collaborating in a bright, modern workspace."
-            fill
-            className="object-cover object-center -z-10 brightness-50"
-            priority
-            data-ai-hint="women collaborating"
-          />
-          <div className="container px-4 md:px-6 text-center text-primary-foreground">
+        <section className="relative w-full h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden flex items-center justify-center">
+           <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute top-0 left-0 w-full h-full object-cover -z-10 brightness-50"
+            poster="/my-hero-image.jpg"
+            src="/hero-video.mp4"
+          >
+            Your browser does not support the video tag.
+          </video>
+          <div className="container px-4 md:px-6 text-center text-primary-foreground relative z-10">
             <div className="max-w-3xl mx-auto">
               <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
                 Unlock Your Potential, Transform Your Future
