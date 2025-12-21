@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, Search, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -9,43 +9,14 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-  DropdownMenuGroup,
-  DropdownMenuLabel,
-} from "@/components/ui/dropdown-menu";
 import { CustomLogo } from "./CustomLogo";
-import { programs } from "@/lib/programs";
-import * as React from "react";
-import { cn } from "@/lib/utils";
 import { generateWhatsappLink } from "@/lib/config";
-import { Input } from "@/components/ui/input";
-import { useRouter } from "next/navigation";
-
-
-const techPrograms = programs.filter(p => p.slug !== 'women-empowerment-initiative' && (p.slug.includes('development') || p.slug.includes('design') || p.slug.includes('marketing')));
-const leadershipPrograms = programs.filter(p => p.slug.includes('leadership'));
 
 export function Header() {
-  const [isSearchOpen, setIsSearchOpen] = React.useState(false);
-  const router = useRouter();
-
-  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const searchQuery = formData.get('search') as string;
-    if(searchQuery.trim()){
-      router.push(`/programs?search=${searchQuery}`);
-      setIsSearchOpen(false);
-    }
-  }
-
   const enrollLink = generateWhatsappLink("Hello! I'm interested in enrolling in one of your programs.");
 
   const navLinks = [
+    { href: "/programs", label: "Programs" },
     { href: "/women-empowerment", label: "Women Empowerment" },
     { href: "/about", label: "About Us" },
     { href: "/contact", label: "Contact Us" },
@@ -64,40 +35,6 @@ export function Header() {
         </div>
 
         <nav className="hidden items-center gap-6 text-sm md:flex">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="text-foreground/60 transition-colors hover:text-foreground/80 flex items-center gap-1 outline-none">
-                Programs
-                </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56">
-                <DropdownMenuItem asChild>
-                    <Link href="/programs">All Programs</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                    <Link href="/women-empowerment">Women Empowerment</Link>
-                </DropdownMenuItem>
-              
-              {techPrograms.length > 0 && <DropdownMenuGroup>
-                <DropdownMenuLabel>Tech Courses</DropdownMenuLabel>
-                {techPrograms.map(p => (
-                    <DropdownMenuItem key={p.slug} asChild>
-                    <Link href={`/programs/${p.slug}`}>{p.title}</Link>
-                    </DropdownMenuItem>
-                ))}
-              </DropdownMenuGroup>}
-
-              {leadershipPrograms.length > 0 && <DropdownMenuGroup>
-                <DropdownMenuLabel>Leadership</DropdownMenuLabel>
-                {leadershipPrograms.map(p => (
-                    <DropdownMenuItem key={p.slug} asChild>
-                    <Link href={`/programs/${p.slug}`}>{p.title}</Link>
-                    </DropdownMenuItem>
-                ))}
-              </DropdownMenuGroup>}
-            </DropdownMenuContent>
-          </DropdownMenu>
-
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -110,23 +47,11 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <div className={cn("hidden md:flex items-center gap-2", { 'hidden': isSearchOpen })}>
-            <Button variant="ghost" size="icon" onClick={() => setIsSearchOpen(true)}>
-              <Search className="h-5 w-5" />
-              <span className="sr-only">Search</span>
-            </Button>
+          <div className="hidden md:flex items-center gap-2">
             <Button asChild>
               <Link href={enrollLink} target="_blank">Enroll Now</Link>
             </Button>
           </div>
-          
-          <form onSubmit={handleSearch} className={cn("hidden md:flex items-center gap-2", { 'flex': isSearchOpen, 'hidden': !isSearchOpen })}>
-              <Input type="search" name="search" placeholder="Search courses..." className="w-64" />
-              <Button variant="ghost" size="icon" type="button" onClick={() => setIsSearchOpen(false)}>
-                  <X className="h-5 w-5" />
-                  <span className="sr-only">Close search</span>
-              </Button>
-          </form>
 
           <div className="md:hidden">
             <Sheet>
@@ -138,11 +63,6 @@ export function Header() {
               </SheetTrigger>
               <SheetContent side="right">
                 <div className="flex flex-col pt-8">
-                  <SheetClose asChild>
-                      <Link href="/programs" className="block px-4 py-2 text-lg text-foreground/80 hover:text-foreground">
-                          All Programs
-                      </Link>
-                  </SheetClose>
                   {navLinks.map((link) => (
                     <SheetClose asChild key={link.href}>
                       <Link
