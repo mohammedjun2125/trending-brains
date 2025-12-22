@@ -33,7 +33,8 @@ const testimonials = [
 // IMPORTANT: Add your video files to the `public` folder.
 const videoPlaylist = [
   "/hero-video.mp4",
-  // Add more videos here, e.g., "/hero-video-2.mp4", "/hero-video-3.mp4"
+  "/hero-video-2.mp4",
+  "/hero-video-3.mp4",
 ];
 
 export default function Home() {
