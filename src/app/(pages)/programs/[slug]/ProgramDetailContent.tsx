@@ -71,9 +71,9 @@ export default function ProgramDetailContent({ slug }: { slug: string }) {
                         <span className="font-medium text-muted-foreground">Duration:</span>
                         <span className="text-right">{program.duration}</span>
                     </div>
-                     <div className="flex justify-between">
+                     <div className="flex justify-between items-baseline">
                         <span className="font-medium text-muted-foreground">Fee:</span>
-                        <span className="text-right font-bold text-lg">{program.fee}</span>
+                        <span className="text-right font-bold text-lg text-foreground">{program.fee}</span>
                     </div>
                  </div>
                  <Button size="lg" className="w-full mt-6" asChild>

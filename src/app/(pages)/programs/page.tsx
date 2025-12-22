@@ -69,9 +69,9 @@ export default function ProgramsPage() {
                 <CardHeader>
                   <CardTitle className="font-headline text-2xl">{program.title}</CardTitle>
                   <CardDescription>{program.description}</CardDescription>
-                  <div className="flex flex-col sm:flex-row gap-4 pt-2 text-sm text-muted-foreground">
-                      <span>Duration: {program.duration}</span>
-                      <span>Fee: {program.fee}</span>
+                  <div className="flex flex-col sm:flex-row gap-4 pt-2 text-sm">
+                      <span className="text-muted-foreground">Duration: {program.duration}</span>
+                      <span className="font-bold text-foreground">Fee: {program.fee}</span>
                   </div>
                 </CardHeader>
                 <CardContent className="flex-grow">

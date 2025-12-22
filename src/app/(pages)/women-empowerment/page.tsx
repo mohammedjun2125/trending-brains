@@ -137,9 +137,9 @@ export default function WomenEmpowermentPage() {
                             <CardHeader>
                                 <CardTitle className="font-headline text-2xl">{skillDevProgram.title}</CardTitle>
                                 <CardDescription>{skillDevProgram.description}</CardDescription>
-                                <div className="flex gap-4 pt-2 text-sm text-muted-foreground">
-                                    <span>Duration: {skillDevProgram.duration}</span>
-                                    <span>Fee: {skillDevProgram.fee}</span>
+                                <div className="flex gap-4 pt-2 text-sm">
+                                    <span className="text-muted-foreground">Duration: {skillDevProgram.duration}</span>
+                                    <span className="font-bold text-foreground">Fee: {skillDevProgram.fee}</span>
                                 </div>
                             </CardHeader>
                             <CardContent className="flex-grow">
@@ -170,9 +170,9 @@ export default function WomenEmpowermentPage() {
                             <CardHeader>
                                 <CardTitle className="font-headline text-2xl">{vocationalProgram.title}</CardTitle>
                                 <CardDescription>{vocationalProgram.description}</CardDescription>
-                                <div className="flex gap-4 pt-2 text-sm text-muted-foreground">
-                                    <span>Duration: {vocationalProgram.duration}</span>
-                                    <span>Fee: {vocationalProgram.fee}</span>
+                                <div className="flex gap-4 pt-2 text-sm">
+                                    <span className="text-muted-foreground">Duration: {vocationalProgram.duration}</span>
+                                    <span className="font-bold text-foreground">Fee: {vocationalProgram.fee}</span>
                                 </div>
                             </CardHeader>
                             <CardContent className="flex-grow">
