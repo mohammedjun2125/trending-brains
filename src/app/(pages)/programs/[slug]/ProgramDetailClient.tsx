@@ -6,7 +6,10 @@ import Link from 'next/link';
 import type { Program } from '@/lib/programs';
 import { generateWhatsappLink } from '@/lib/config';
 
-export default function ProgramDetailClient({ program }: { program: Program }) {
+// Create a version of the Program type that is safe to pass to client components
+type SerializableProgram = Omit<Program, 'icon'>;
+
+export default function ProgramDetailClient({ program }: { program: SerializableProgram }) {
   const message = `Hello! I'm interested in enrolling in the "${program.title}" program.`;
   const whatsappLink = generateWhatsappLink(message);
 
