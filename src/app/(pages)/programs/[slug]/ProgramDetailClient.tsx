@@ -3,56 +3,15 @@
 import { Button } from '@/components/ui/button';
 import { CheckCircle } from 'lucide-react';
 import Link from 'next/link';
-import { programs } from '@/lib/programs';
 import type { Program } from '@/lib/programs';
-import { notFound } from 'next/navigation';
 import { generateWhatsappLink } from '@/lib/config';
-import Image from 'next/image';
 
-export default function ProgramDetailContent({ slug }: { slug: string }) {
-  const program = programs.find((p) => p.slug === slug);
-  
-  if (!program) {
-    notFound();
-  }
-
-  const ProgramIcon = program.icon;
-
+export default function ProgramDetailClient({ program }: { program: Program }) {
   const message = `Hello! I'm interested in enrolling in the "${program.title}" program.`;
   const whatsappLink = generateWhatsappLink(message);
 
   return (
-    <div className="container max-w-4xl mx-auto py-12 md:py-16">
-        <div className="mb-8">
-             <Link href="/programs/general" className="text-sm text-accent hover:underline">
-                &larr; Back to all programs
-            </Link>
-        </div>
-      <header className="mb-8">
-        <div className="flex items-center gap-4 mb-4">
-            <div className="bg-accent text-accent-foreground rounded-full p-3">
-                {ProgramIcon && <ProgramIcon className="h-8 w-8" />}
-            </div>
-            <h1 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl">
-                {program.title}
-            </h1>
-        </div>
-        <p className="text-xl text-muted-foreground mt-2">
-          {program.longDescription}
-        </p>
-      </header>
-
-      <Image
-        src={program.image}
-        alt={program.title}
-        width={800}
-        height={450}
-        className="w-full rounded-lg object-cover mb-12 aspect-[16/9]"
-        priority
-        data-ai-hint={program.imageHint}
-      />
-
-      <div className="grid md:grid-cols-3 gap-8">
+    <div className="grid md:grid-cols-3 gap-8">
         <main className="md:col-span-2 space-y-12">
             <section>
                  <h2 className="text-2xl font-bold font-headline mb-4">Weekly Syllabus</h2>
@@ -104,6 +63,5 @@ export default function ProgramDetailContent({ slug }: { slug: string }) {
             </div>
         </aside>
       </div>
-    </div>
   );
 }
