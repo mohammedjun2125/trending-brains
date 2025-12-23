@@ -93,7 +93,7 @@ export default function Home() {
               <p className="mt-4 text-lg md:text-xl">
                 Trending Brains Academy offers expert-led courses in technology, design, and business to help you achieve your career goals.
               </p>
-              <div className="mt-8 flex justify-center gap-4">
+              <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Button size="lg" asChild>
                   <Link href="/programs">Explore Our Programs</Link>
                 </Button>
@@ -228,5 +228,3 @@ export default function Home() {
     </div>
   );
 }
-
-    

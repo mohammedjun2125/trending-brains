@@ -24,13 +24,13 @@ export default function ContactPage() {
         </p>
       </div>
 
-      <div className="max-w-sm mx-auto mt-12">
+      <div className="max-w-sm mx-auto mt-12 w-full">
          <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6 space-y-6">
             <div className="space-y-2">
                 <h3 className="text-xl font-bold font-headline">Contact Information</h3>
                 <div className="flex items-center gap-4 pt-2">
                     <Mail className="h-5 w-5 text-accent" />
-                    <a href="mailto:info@trendingbrains.com" className="text-muted-foreground hover:text-foreground">
+                    <a href="mailto:info@trendingbrains.com" className="text-muted-foreground hover:text-foreground break-all">
                         info@trendingbrains.com
                     </a>
                 </div>

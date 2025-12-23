@@ -41,7 +41,7 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-        <div>
+        <div className="order-first md:order-last">
            {aboutImage && (
             <Image
               src={aboutImage.imageUrl}
