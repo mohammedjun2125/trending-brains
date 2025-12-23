@@ -65,9 +65,7 @@ export default function GeneralProgramsPage() {
       <div className="grid gap-8 lg:grid-cols-2 max-w-5xl mx-auto">
         {filteredPrograms.length > 0 ? (
           filteredPrograms.map((program) => {
-            const linkHref = program.slug === 'entrepreneurs-launch-pad'
-              ? '/women-empowerment'
-              : `/programs/${program.slug}`;
+            const linkHref = `/programs/${program.slug}`;
 
             return (
               <Card key={program.title} className="flex flex-col">
