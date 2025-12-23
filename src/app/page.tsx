@@ -95,7 +95,7 @@ export default function Home() {
               </p>
               <div className="mt-8 flex justify-center gap-4">
                 <Button size="lg" asChild>
-                  <Link href="/programs">Explore Our Courses</Link>
+                  <Link href="/programs">Explore Our Programs</Link>
                 </Button>
                 <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-black">
                   <Link href="/about">About Us</Link>

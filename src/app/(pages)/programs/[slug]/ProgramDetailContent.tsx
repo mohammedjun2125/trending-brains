@@ -23,7 +23,7 @@ export default function ProgramDetailContent({ slug }: { slug: string }) {
   return (
     <div className="container max-w-4xl mx-auto py-12 md:py-16">
         <div className="mb-8">
-             <Link href="/programs" className="text-sm text-accent hover:underline">
+             <Link href="/programs/general" className="text-sm text-accent hover:underline">
                 &larr; Back to all programs
             </Link>
         </div>
