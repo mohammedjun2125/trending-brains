@@ -3,6 +3,7 @@ import { programs } from '@/lib/programs';
 import ProgramDetailClient from './ProgramDetailClient';
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import type { Program } from '@/lib/programs';
 
 export function generateStaticParams() {
   return programs
@@ -54,6 +55,10 @@ export default function ProgramDetailPage({ params }: { params: { slug: string }
   
   const ProgramIcon = program.icon;
 
+  // Create a serializable version of the program object without the icon
+  const { icon, ...serializableProgram } = program;
+
+
   return (
      <div className="container max-w-4xl mx-auto py-12 md:py-16">
         <header className="mb-8">
@@ -80,7 +85,7 @@ export default function ProgramDetailPage({ params }: { params: { slug: string }
             data-ai-hint={program.imageHint}
         />
 
-        <ProgramDetailClient program={program} />
+        <ProgramDetailClient program={serializableProgram} />
     </div>
   );
 }
