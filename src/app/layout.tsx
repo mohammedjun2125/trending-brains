@@ -15,14 +15,14 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_TITLE}`,
   },
   description: SITE_DESCRIPTION,
-  metadataBase: new URL("https://trendingbrains.com"), // Replace with your actual domain
+  metadataBase: new URL("https://www.trendingbrains.com"), // Use www domain
   openGraph: {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     siteName: SITE_TITLE,
     locale: "en_US",
     type: "website",
-    url: "https://trendingbrains.com", // Replace with your actual domain
+    url: "https://www.trendingbrains.com", // Use www domain
   },
   twitter: {
     card: "summary_large_image",

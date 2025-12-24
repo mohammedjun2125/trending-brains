@@ -3,14 +3,16 @@ import { programs } from '@/lib/programs';
 import { posts } from '@/lib/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = 'https://trendingbrains.com'; // Replace with your actual domain
+  const siteUrl = 'https://www.trendingbrains.com'; // Use www domain
 
   // Static pages
   const staticRoutes = [
     '', 
     '/about', 
     '/contact', 
-    '/programs', 
+    '/programs',
+    '/programs/it',
+    '/programs/general',
     '/women-empowerment',
     '/blog',
     '/terms',
@@ -23,10 +25,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === '' ? 1.0 : 0.8,
   }));
 
-  // Program pages
-  const programRoutes = programs
-    .filter(program => program.slug !== 'entrepreneurs-launch-pad')
-    .map(program => ({
+  // Program pages - include all programs
+  const programRoutes = programs.map(program => ({
       url: `${siteUrl}/programs/${program.slug}`,
       lastModified: new Date().toISOString(),
       changeFrequency: 'weekly' as const,
