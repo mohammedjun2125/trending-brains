@@ -40,27 +40,20 @@ const videoPlaylist = [
 
 export default function Home() {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
-  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const featuredPrograms = programs.filter(p => p.slug === 'women-skill-development' || p.slug === 'vocational-skills-for-women');
   const entrepreneurProgram = programs.find(p => p.slug === 'entrepreneurs-launch-pad');
 
   const handleVideoEnd = () => {
-    const nextIndex = (currentVideoIndex + 1) % videoPlaylist.length;
-    setCurrentVideoIndex(nextIndex);
+    setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videoPlaylist.length);
   };
   
   useEffect(() => {
-    videoRefs.current.forEach((video, index) => {
-      if (video) {
-        if (index === currentVideoIndex) {
-          video.play().catch(error => console.error("Autoplay was prevented:", error));
-        } else {
-          video.pause();
-          video.currentTime = 0;
-        }
-      }
-    });
+    if (videoRef.current) {
+        videoRef.current.src = videoPlaylist[currentVideoIndex];
+        videoRef.current.play().catch(error => console.error("Autoplay was prevented:", error));
+    }
   }, [currentVideoIndex]);
 
   return (
@@ -68,23 +61,16 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative w-full h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden flex items-center justify-center">
-          {videoPlaylist.map((src, index) => (
-             <video
-              key={src}
-              ref={el => videoRefs.current[index] = el}
-              muted
-              playsInline
-              onEnded={handleVideoEnd}
-              className={cn(
-                "absolute top-0 left-0 w-full h-full object-cover -z-10 brightness-50 transition-opacity duration-1000",
-                currentVideoIndex === index ? "opacity-100" : "opacity-0"
-              )}
-              src={src}
-              preload="auto"
-            >
-              Your browser does not support the video tag.
-            </video>
-          ))}
+          <video
+            ref={videoRef}
+            muted
+            playsInline
+            onEnded={handleVideoEnd}
+            className="absolute top-0 left-0 w-full h-full object-cover -z-10 brightness-50"
+            preload="auto"
+          >
+            Your browser does not support the video tag.
+          </video>
           <div className="container px-4 md:px-6 text-center text-primary-foreground relative z-10">
             <div className="max-w-3xl mx-auto">
               <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
