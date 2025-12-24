@@ -39,38 +39,70 @@ const videoPlaylist = [
 ];
 
 export default function Home() {
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const [playlist, setPlaylist] = useState(videoPlaylist);
+  const videoRefs = [useRef<HTMLVideoElement>(null), useRef<HTMLVideoElement>(null)];
+  const [activeVideo, setActiveVideo] = useState(0);
 
-  const featuredPrograms = programs.filter(p => p.slug === 'women-skill-development' || p.slug === 'vocational-skills-for-women');
-  const entrepreneurProgram = programs.find(p => p.slug === 'entrepreneurs-launch-pad');
+  useEffect(() => {
+    // Start playing the first video
+    const currentVideo = videoRefs[activeVideo].current;
+    if (currentVideo) {
+      currentVideo.play().catch(error => console.error("Autoplay was prevented:", error));
+    }
+
+    // Preload the next video
+    const nextVideoIndex = (activeVideo + 1) % 2;
+    const nextVideo = videoRefs[nextVideoIndex].current;
+    if (nextVideo) {
+        const nextSrcIndex = (playlist.indexOf(currentVideo?.src.split('/').pop() || '') + 1) % playlist.length;
+        if (!nextVideo.src.endsWith(playlist[nextSrcIndex])) {
+             nextVideo.src = playlist[nextSrcIndex];
+             nextVideo.load();
+        }
+    }
+  }, [activeVideo, playlist, videoRefs]);
+
 
   const handleVideoEnd = () => {
-    setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videoPlaylist.length);
+    // Switch to the next preloaded video
+    const nextPlayer = (activeVideo + 1) % 2;
+    setActiveVideo(nextPlayer);
+
+    // Update the playlist rotation
+    setPlaylist(prev => {
+        const newPlaylist = [...prev];
+        newPlaylist.push(newPlaylist.shift()!);
+        return newPlaylist;
+    });
   };
-  
-  useEffect(() => {
-    if (videoRef.current) {
-        videoRef.current.src = videoPlaylist[currentVideoIndex];
-        videoRef.current.play().catch(error => console.error("Autoplay was prevented:", error));
-    }
-  }, [currentVideoIndex]);
+
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative w-full h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden flex items-center justify-center">
+          
           <video
-            ref={videoRef}
+            ref={videoRefs[0]}
+            src={playlist[0]}
+            className={cn("absolute top-0 left-0 w-full h-full object-cover -z-10 brightness-50 transition-opacity duration-1000", activeVideo === 0 ? "opacity-100" : "opacity-0")}
             muted
             playsInline
             onEnded={handleVideoEnd}
-            className="absolute top-0 left-0 w-full h-full object-cover -z-10 brightness-50"
             preload="auto"
-          >
-            Your browser does not support the video tag.
-          </video>
+          />
+          <video
+            ref={videoRefs[1]}
+            src={playlist[1]}
+            className={cn("absolute top-0 left-0 w-full h-full object-cover -z-10 brightness-50 transition-opacity duration-1000", activeVideo === 1 ? "opacity-100" : "opacity-0")}
+            muted
+            playsInline
+            onEnded={handleVideoEnd}
+            preload="auto"
+          />
+
+
           <div className="container px-4 md:px-6 text-center text-primary-foreground relative z-10">
             <div className="max-w-3xl mx-auto">
               <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
@@ -102,29 +134,29 @@ export default function Home() {
                 </div>
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
                     {/* Entrepreneur Program Card */}
-                    {entrepreneurProgram && (
+                    {programs.find(p => p.slug === 'entrepreneurs-launch-pad') && (
                         <Card className="flex flex-col transition-transform transform hover:-translate-y-2 lg:col-span-1">
                             <CardHeader className="items-start gap-4 space-y-0">
                                 <div className="flex items-center gap-4">
                                     <div className="bg-accent text-accent-foreground rounded-full p-3">
                                         <Star className="h-6 w-6" />
                                     </div>
-                                    <CardTitle className="font-headline text-2xl">{entrepreneurProgram.title}</CardTitle>
+                                    <CardTitle className="font-headline text-2xl">{programs.find(p => p.slug === 'entrepreneurs-launch-pad')!.title}</CardTitle>
                                 </div>
                             </CardHeader>
                             <CardContent>
-                                <p className="text-muted-foreground">{entrepreneurProgram.description}</p>
+                                <p className="text-muted-foreground">{programs.find(p => p.slug === 'entrepreneurs-launch-pad')!.description}</p>
                             </CardContent>
                             <CardFooter className="mt-auto">
                                 <Button asChild variant="outline" className="w-full">
-                                    <Link href={`/programs/${entrepreneurProgram.slug}`}>Explore Program <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                                    <Link href={`/programs/entrepreneurs-launch-pad`}>Explore Program <ArrowRight className="ml-2 h-4 w-4" /></Link>
                                 </Button>
                             </CardFooter>
                         </Card>
                     )}
 
                     {/* Other Program Cards */}
-                    {featuredPrograms.map((program) => {
+                    {programs.filter(p => p.slug === 'women-skill-development' || p.slug === 'vocational-skills-for-women').map((program) => {
                         const Icon = program.icon;
                         return (
                         <Card key={program.title} className="flex flex-col transition-transform transform hover:-translate-y-2">
