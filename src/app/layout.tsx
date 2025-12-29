@@ -5,7 +5,21 @@ import { Toaster } from "@/components/ui/toaster";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
-import { WHATSAPP_NUMBER } from "@/lib/config";
+import { Inter, Poppins } from 'next/font/google';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['600', '700'],
+  display: 'swap',
+  variable: '--font-poppins',
+});
+
 
 export const metadata: Metadata = {
   title: "Online Skill Development & Career Training | Trending Brains Academy",
@@ -22,11 +36,20 @@ export const metadata: Metadata = {
     locale: "en_IN",
     type: "website",
     url: "https://www.trendingbrains.com", // Use www domain
+    images: [
+      {
+        url: 'https://www.trendingbrains.com/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Trending Brains Academy',
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Online Skill Development & Career Training | Trending Brains Academy",
     description: "Learn job-ready skills, earn certifications, and grow your career with our practical online courses.",
+    images: ['https://www.trendingbrains.com/og-image.png'],
   },
   alternates: {
     canonical: '/',
@@ -56,7 +79,6 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
-  userScalable: false,
 };
 
 
@@ -66,14 +88,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${poppins.variable}`} suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap"
-          rel="stylesheet"
-        />
         <meta name="google-site-verification" content="google4272a75c1f5aca66" />
       </head>
       <body className="font-body antialiased">
@@ -88,3 +104,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+    

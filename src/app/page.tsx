@@ -14,7 +14,9 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ArrowRight, Star, Award, Briefcase, UserCheck } from "lucide-react";
 import { programs } from "@/lib/programs";
-import { cn } from "@/lib/utils";
+import Image from "next/image";
+import placeholderImages from "@/lib/placeholder-images.json";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 
 const testimonials = [
@@ -30,12 +32,6 @@ const testimonials = [
     quote: "Thanks to the practical, hands-on approach of the digital marketing program, I achieved significant career growth and landed my dream job.",
     avatar: "https://picsum.photos/seed/ps/100/100"
   },
-];
-
-const videoPlaylist = [
-  "/hero-video.mp4",
-  "/hero-video-2.mp4",
-  "/hero-video-3.mp4",
 ];
 
 const whyChooseUs = [
@@ -62,45 +58,8 @@ const whyChooseUs = [
 ];
 
 export default function Home() {
-  const videoRefs = [useRef<HTMLVideoElement>(null), useRef<HTMLVideoElement>(null)];
-  const [activePlayer, setActivePlayer] = useState(0);
-  const [playlistIndex, setPlaylistIndex] = useState(0);
-
-  useEffect(() => {
-    // Set initial sources
-    if (videoRefs[0].current) {
-        videoRefs[0].current.src = videoPlaylist[0];
-    }
-    if (videoRefs[1].current) {
-        videoRefs[1].current.src = videoPlaylist[1];
-    }
-  }, []);
-
-  const handleVideoEnd = () => {
-    // Increment playlist index
-    const nextPlaylistIndex = (playlistIndex + 1) % videoPlaylist.length;
-    setPlaylistIndex(nextPlaylistIndex);
-    
-    // Switch the active player
-    const nextPlayer = (activePlayer + 1) % 2;
-    setActivePlayer(nextPlayer);
-
-    // Preload the *next* video on the now-hidden player
-    const playerToPreload = videoRefs[activePlayer].current;
-    if (playerToPreload) {
-        const videoToPreloadIndex = (nextPlaylistIndex + 1) % videoPlaylist.length;
-        playerToPreload.src = videoPlaylist[videoToPreloadIndex];
-        playerToPreload.load();
-    }
-  };
-
-  useEffect(() => {
-    const currentPlayer = videoRefs[activePlayer].current;
-    if (currentPlayer) {
-        currentPlayer.play().catch(error => console.error("Autoplay was prevented:", error));
-    }
-  }, [activePlayer]);
-
+  const isMobile = useIsMobile();
+  const heroImage = placeholderImages.placeholderImages.find(p => p.id === "hero-image");
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
@@ -108,22 +67,28 @@ export default function Home() {
         {/* Hero Section */}
         <section className="relative w-full h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden flex items-center justify-center">
           
-          <video
-            ref={videoRefs[0]}
-            className={cn("absolute top-0 left-0 w-full h-full object-cover -z-10 brightness-50 transition-opacity duration-1000", activePlayer === 0 ? "opacity-100" : "opacity-0")}
-            muted
-            playsInline
-            onEnded={handleVideoEnd}
-            preload="auto"
-          />
-          <video
-            ref={videoRefs[1]}
-            className={cn("absolute top-0 left-0 w-full h-full object-cover -z-10 brightness-50 transition-opacity duration-1000", activePlayer === 1 ? "opacity-100" : "opacity-0")}
-            muted
-            playsInline
-            onEnded={handleVideoEnd}
-            preload="auto"
-          />
+          {!isMobile ? (
+            <video
+              className="absolute top-0 left-0 w-full h-full object-cover -z-10 brightness-50"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              src="/hero-video.mp4"
+            />
+           ) : (
+            heroImage && (
+              <Image
+                src={heroImage.imageUrl}
+                alt={heroImage.description}
+                fill
+                className="object-cover object-center -z-10 brightness-50"
+                priority
+                data-ai-hint={heroImage.imageHint}
+              />
+            )
+          )}
 
 
           <div className="container px-4 md:px-6 text-center text-primary-foreground relative z-10">
@@ -295,3 +260,5 @@ export default function Home() {
     </div>
   );
 }
+
+    

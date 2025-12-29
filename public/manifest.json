@@ -1,21 +1,19 @@
+
 {
   "name": "Trending Brains Academy",
   "short_name": "Trending Brains",
-  "description": "Empowering women with expert-led online courses in technology, design, and business.",
+  "description": "Learn job-ready skills, earn certifications, and grow your career with online skill development, women empowerment & entrepreneurship programs.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#F44336",
   "icons": [
     {
-      "src": "/logo-192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "/logo-512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ]
 }
+
+    
