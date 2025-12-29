@@ -67,8 +67,7 @@ export default function Home() {
         {/* Hero Section */}
         <section className="relative w-full h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden flex items-center justify-center">
           
-          {!isMobile ? (
-            <video
+           <video
               className="absolute top-0 left-0 w-full h-full object-cover -z-10 brightness-50"
               autoPlay
               loop
@@ -77,20 +76,7 @@ export default function Home() {
               preload="metadata"
               src="/hero-video.mp4"
             />
-           ) : (
-            heroImage && (
-              <Image
-                src={heroImage.imageUrl}
-                alt={heroImage.description}
-                fill
-                className="object-cover object-center -z-10 brightness-50"
-                priority
-                data-ai-hint={heroImage.imageHint}
-              />
-            )
-          )}
-
-
+          
           <div className="container px-4 md:px-6 text-center text-primary-foreground relative z-10">
             <div className="max-w-3xl mx-auto">
               <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
