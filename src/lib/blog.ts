@@ -259,6 +259,60 @@ export const posts: Post[] = [
     imageHint: 'job skills'
   },
   {
+    slug: 'entrepreneurship-training-start-business',
+    title: 'Entrepreneurship Training: Learn the Skills to Start Your Own Business',
+    description: 'Learn the practical skills needed to start, manage, and grow a business confidently with our online entrepreneurship training program.',
+    author: 'Jane Doe',
+    authorImage: 'https://picsum.photos/seed/jd/100/100',
+    date: 'November 8, 2024',
+    tags: ['Entrepreneurship', 'Business Skills', 'Startup'],
+    content: `
+        <p>Entrepreneurship is no longer limited to large investments or big offices. Today, anyone with the right skills and mindset can build a successful business. Entrepreneurship training helps individuals gain the practical knowledge needed to start, manage, and grow a business confidently.</p>
+        <p>With online learning, entrepreneurship has become more accessible than ever.</p>
+        <h3 class="font-headline text-xl font-bold mt-6 mb-2">Why Entrepreneurship Training Is Important</h3>
+        <p>Entrepreneurship training focuses on:</p>
+        <ul class="list-disc list-inside space-y-2 my-4">
+            <li>Business planning basics</li>
+            <li>Problem-solving skills</li>
+            <li>Financial understanding</li>
+            <li>Decision-making confidence</li>
+        </ul>
+        <p>These skills are essential for anyone who wants to start their own business or become self-employed.</p>
+        <h3 class="font-headline text-xl font-bold mt-6 mb-2">Business Skills You Learn Through Entrepreneurship Training</h3>
+        <p>Key skills include:</p>
+        <ul class="list-disc list-inside space-y-2 my-4">
+            <li>Business fundamentals</li>
+            <li>Marketing & customer understanding</li>
+            <li>Financial literacy</li>
+            <li>Communication & leadership</li>
+        </ul>
+        <p>Many of these are taught through online entrepreneurship courses.</p>
+        <h3 class="font-headline text-xl font-bold mt-6 mb-2">Entrepreneurship Training for Women</h3>
+        <p>Entrepreneurship training for women empowers women to:</p>
+        <ul class="list-disc list-inside space-y-2 my-4">
+            <li>Build independent income sources</li>
+            <li>Start home-based or small businesses</li>
+            <li>Gain confidence and leadership skills</li>
+        </ul>
+        <p>Skill-based entrepreneurship is helping many women turn ideas into sustainable businesses.</p>
+        <h3 class="font-headline text-xl font-bold mt-6 mb-2">How Skill Development Supports Entrepreneurs</h3>
+        <p>Entrepreneurship is closely connected with skill development courses. Practical skills help entrepreneurs adapt, grow, and compete effectively in the market.</p>
+        <h3 class="font-headline text-xl font-bold mt-6 mb-2">Why Choose Trending Brains Academy</h3>
+        <p>Trending Brains Academy offers career-focused entrepreneurship training designed for beginners and aspiring business owners.</p>
+        <p>Key Benefits:</p>
+        <ul class="list-disc list-inside space-y-2 my-4">
+            <li>Practical business skills</li>
+            <li>Easy-to-understand training</li>
+            <li>Online learning flexibility</li>
+            <li>Certification-based programs</li>
+        </ul>
+        <h3 class="font-headline text-xl font-bold mt-6 mb-2">Conclusion</h3>
+        <p>Entrepreneurship training provides the foundation needed to build a successful business. With the right skills, guidance, and mindset, anyone can take the first step toward entrepreneurship and financial independence.</p>
+    `,
+    image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxlbnRyZXByZW5ldXIlMjBwbGFubmluZ3xlbnwwfHx8fDE3NjYxMzY2MjN8MA&ixlib=rb-4.0.3&q=80&w=1080',
+    imageHint: 'entrepreneur planning'
+  },
+  {
     slug: 'how-to-choose-a-career',
     title: 'A Practical Guide on How to Choose a Career You Love',
     description: 'Feeling lost about your career path? This guide will walk you through the essential steps to identify your passions, assess your skills, and find a career that truly fulfills you.',
@@ -331,5 +385,7 @@ export const posts: Post[] = [
     imageHint: 'success story'
   },
 ];
+
+    
 
     
