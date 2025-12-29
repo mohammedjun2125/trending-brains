@@ -312,6 +312,60 @@ export const posts: Post[] = [
     image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxlbnRyZXByZW5ldXIlMjBwbGFubmluZ3xlbnwwfHx8fDE3NjYxMzY2MjN8MA&ixlib=rb-4.0.3&q=80&w=1080',
     imageHint: 'entrepreneur planning'
   },
+   {
+    slug: 'vocational-training-programs-india',
+    title: 'Vocational Training Programs: Practical Skills for Real Career Opportunities',
+    description: 'Vocational training programs focus on practical, hands-on skills that prepare learners for real career opportunities in India.',
+    author: 'Jane Doe',
+    authorImage: 'https://picsum.photos/seed/jd/100/100',
+    date: 'November 10, 2024',
+    tags: ['Vocational Training', 'Practical Skills', 'Career Growth'],
+    content: `
+        <p>Not everyone wants a traditional office job. Many people prefer learning skills that can directly lead to income and self-employment. Vocational training programs focus on practical, hands-on skills that prepare learners for real career opportunities.</p>
+        <p>These programs are becoming increasingly popular in India due to their effectiveness and flexibility.</p>
+        <h3 class="font-headline text-xl font-bold mt-6 mb-2">What Are Vocational Training Programs?</h3>
+        <p>Vocational training programs are designed to teach career-oriented skills that can be applied immediately. Unlike academic education, vocational courses focus on real-world practice and skill mastery.</p>
+        <p>They help learners:</p>
+        <ul class="list-disc list-inside space-y-2 my-4">
+            <li>Gain practical skills</li>
+            <li>Become job-ready quickly</li>
+            <li>Explore self-employment opportunities</li>
+        </ul>
+        <h2 class="font-headline text-2xl font-bold mt-8 mb-4">Benefits of Vocational Training Courses</h2>
+        <p>Vocational training courses offer:</p>
+        <ul class="list-disc list-inside space-y-2 my-4">
+            <li>Hands-on learning</li>
+            <li>Shorter learning duration</li>
+            <li>Affordable education</li>
+            <li>Faster income opportunities</li>
+        </ul>
+        <p>This makes them ideal for students, women, and career switchers.</p>
+        <h3 class="font-headline text-xl font-bold mt-6 mb-2">Vocational Training Programs in India</h3>
+        <p>In India, vocational training plays a major role in skill development and employment generation. Many learners choose vocational training programs in India to build sustainable careers without long-term education costs.</p>
+        <h2 class="font-headline text-2xl font-bold mt-8 mb-4">Practical Skills Training for Career Growth</h2>
+        <p>Practical skills training helps learners:</p>
+        <ul class="list-disc list-inside space-y-2 my-4">
+            <li>Build confidence</li>
+            <li>Improve employability</li>
+            <li>Start small businesses</li>
+            <li>Achieve financial independence</li>
+        </ul>
+        <p>These skills are highly valued in today’s job market.</p>
+        <h3 class="font-headline text-xl font-bold mt-6 mb-2">Why Choose Trending Brains Academy</h3>
+        <p>Trending Brains Academy offers vocational and skill development courses focused on practical learning and real-world application.</p>
+        <p>Key Features:</p>
+        <ul class="list-disc list-inside space-y-2 my-4">
+            <li>Beginner-friendly programs</li>
+            <li>Flexible online learning</li>
+            <li>Career-oriented skills</li>
+            <li>Certification-based courses</li>
+        </ul>
+        <h3 class="font-headline text-xl font-bold mt-6 mb-2">Conclusion</h3>
+        <p>Vocational training programs provide a powerful pathway to employment and self-reliance. With the right practical skills, learners can build meaningful careers and secure their future.</p>
+    `,
+    image: 'https://images.unsplash.com/photo-1521790797524-1ca561c0511d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx2b2NhdGlvbmFsJTIwdHJhaW5pbmd8ZW58MHx8fHwxNzY2MTM2NzUxfDA&ixlib=rb-4.0.3&q=80&w=1080',
+    imageHint: 'vocational training'
+  },
   {
     slug: 'how-to-choose-a-career',
     title: 'A Practical Guide on How to Choose a Career You Love',
@@ -385,6 +439,8 @@ export const posts: Post[] = [
     imageHint: 'success story'
   },
 ];
+
+    
 
     
 
