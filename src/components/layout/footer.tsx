@@ -27,10 +27,10 @@ export function Footer() {
                     Empowering the next generation of leaders through education and entrepreneurship.
                 </p>
                  <div className="flex space-x-4">
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+                    <a href="https://instagram.com/trendingbrains" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
                         <Instagram className="h-5 w-5 text-muted-foreground hover:text-foreground" />
                     </a>
-                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to our Youtube channel">
+                    <a href="https://youtube.com/@trendingbrains" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to our Youtube channel">
                         <Youtube className="h-5 w-5 text-muted-foreground hover:text-foreground" />
                     </a>
                 </div>
