@@ -88,10 +88,46 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Trending Brains Academy",
+    "url": "https://www.trendingbrains.com",
+    "logo": "https://www.trendingbrains.com/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9700051427",
+      "contactType": "Customer Service",
+      "areaServed": "IN",
+      "availableLanguage": ["en"]
+    },
+    "sameAs": [
+      "https://instagram.com/trendingbrains",
+      "https://youtube.com/@trendingbrains"
+    ],
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.trendingbrains.com/programs/general?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    },
+     "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.trendingbrains.com"
+      }
+  };
+
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`} suppressHydrationWarning>
       <head>
         <meta name="google-site-verification" content="google4272a75c1f5aca66" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </head>
       <body className="font-body antialiased">
         <div className="flex min-h-screen flex-col">
@@ -106,5 +142,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-    
