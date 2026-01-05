@@ -1,4 +1,3 @@
-
 // You can replace the content of this file with your own SVG logo.
 // Make sure to keep the width and height attributes for proper sizing.
 export function CustomLogo() {
