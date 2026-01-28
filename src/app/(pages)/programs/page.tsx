@@ -40,7 +40,7 @@ export default function ProgramsPage() {
                <div>
                   <CardTitle className="font-headline text-2xl">IT Programs</CardTitle>
                   <CardDescription className="mt-2 text-base">
-                    Coming Soon! Get ready for cutting-edge courses in the most in-demand technologies.
+                    Explore our expert-led courses in Full-Stack Development, AI, and Cyber Security.
                   </CardDescription>
                </div>
             </CardHeader>

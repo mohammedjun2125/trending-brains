@@ -1,5 +1,5 @@
 
-import { BrainCircuit, BookOpen, Users, BarChart, Star, Palette, CookingPot, Hand, Stethoscope, Briefcase } from "lucide-react";
+import { BrainCircuit, BookOpen, Users, BarChart, Star, Palette, CookingPot, Hand, Stethoscope, Briefcase, Shield, Cpu } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export type Program = {
@@ -136,4 +136,74 @@ export const programs: Program[] = [
         "Certification": "Yes, included",
     }
   },
+  {
+    slug: "full-stack-development",
+    title: "Full-Stack Web Development",
+    duration: "6 Months",
+    fee: "₹14999",
+    description: "Become a job-ready full-stack developer. Learn to build modern web applications from end to end.",
+    longDescription: "Our Full-Stack Web Development program is a comprehensive journey into building modern, scalable web applications. You will master both front-end and back-end technologies, including HTML, CSS, JavaScript, React, Node.js, and databases. The program is project-based, ensuring you build a strong portfolio to showcase to employers.",
+    icon: Briefcase,
+    image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb2Rpbmd8ZW58MHx8fHwxNzY2MTM3MTEyfDA&ixlib=rb-4.0.3&q=80&w=1080",
+    imageHint: "coding",
+    syllabus: [
+      { week: "Month 1", topic: "HTML, CSS, and Responsive Design" },
+      { week: "Month 2", topic: "JavaScript Fundamentals and DOM Manipulation" },
+      { week: "Month 3", topic: "React.js and State Management" },
+      { week: "Month 4", topic: "Node.js, Express, and REST APIs" },
+      { week: "Month 5", topic: "Databases (SQL & NoSQL) and ORMs" },
+      { week: "Month 6", topic: "Final Project, Deployment, and Career Prep" },
+    ],
+    details: {
+        "Program Type": "IT Professional Course",
+        "Focus": "Web Development",
+        "Format": "Online, Project-based",
+        "Certification": "Yes, included",
+    }
+  },
+  {
+    slug: "ai-machine-learning",
+    title: "AI & Machine Learning Foundations",
+    duration: "4 Months",
+    fee: "₹19999",
+    description: "Dive into the world of Artificial Intelligence and build foundational skills in machine learning and data science.",
+    longDescription: "This program provides a solid foundation in Artificial Intelligence and Machine Learning. You will learn the core concepts of data analysis, statistical modeling, and popular ML algorithms. Through hands-on projects, you will learn to build and deploy your own models using Python, Scikit-learn, and TensorFlow.",
+    icon: BrainCircuit,
+    image: "https://images.unsplash.com/photo-1620712943543-285f7267a808?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlfGVufDB8fHx8MTc2NjEzNzE1MXww&ixlib=rb-4.0.3&q=80&w=1080",
+    imageHint: "artificial intelligence",
+    syllabus: [
+      { week: "Month 1", topic: "Python for Data Science & Data Analysis" },
+      { week: "Month 2", topic: "Machine Learning Fundamentals & Supervised Learning" },
+      { week: "Month 3", topic: "Unsupervised Learning & Deep Learning Basics" },
+      { week: "Month 4", topic: "Capstone Project & Model Deployment" },
+    ],
+    details: {
+        "Program Type": "IT Professional Course",
+        "Focus": "AI & Data Science",
+        "Format": "Online, Project-based",
+        "Certification": "Yes, included",
+    }
+  },
+  {
+    slug: "cyber-security-essentials",
+    title: "Cyber Security Essentials",
+    duration: "3 Months",
+    fee: "₹12999",
+    description: "Learn the fundamentals of cyber security and ethical hacking to protect digital assets from threats.",
+    longDescription: "In our Cyber Security Essentials course, you will learn to identify vulnerabilities, understand threat vectors, and implement security measures. This program covers network security, cryptography, ethical hacking, and incident response, preparing you for a career in a rapidly growing field.",
+    icon: Shield,
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjeWJlciUyMHNlY3VyaXR5fGVufDB8fHx8MTc2NjEzNzE4MXww&ixlib=rb-4.0.3&q=80&w=1080",
+    imageHint: "cyber security",
+    syllabus: [
+      { week: "Month 1", topic: "Introduction to Cyber Security & Networking Basics" },
+      { week: "Month 2", topic: "Ethical Hacking, Cryptography & Access Management" },
+      { week: "Month 3", topic: "Security Operations, Incident Response & Final Assessment" },
+    ],
+    details: {
+        "Program Type": "IT Professional Course",
+        "Focus": "Cyber Security",
+        "Format": "Online, Lab-based",
+        "Certification": "Yes, included",
+    }
+  }
 ];
