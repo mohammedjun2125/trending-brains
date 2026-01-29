@@ -121,7 +121,7 @@ export const programs: Program[] = [
     description: "Master data analysis from foundations to advanced techniques including Excel, SQL, Python, and data visualization.",
     longDescription: "This comprehensive Data Analytics program is designed to equip you with the job-ready skills needed to become a successful data analyst. You will journey through data foundations, advanced spreadsheet techniques, database querying with SQL, data manipulation with Python, and storytelling with data visualization tools like Tableau or Power BI. The course is packed with real-world case studies and culminates in a capstone project to build your professional portfolio.",
     icon: BarChart,
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkYXRhJTIwYW5hbHlzaXN8ZW58MHx8fHwxNzY2MTM3MjQ0fDA&ixlib=rb-4.0.3&q=80&w=1080",
+    image: "/program-data-analytics.jpg",
     imageHint: "data analysis",
     syllabus: [
       { week: "Module 1", topic: "Introduction to Data Analysis: What is data analysis & why it matters, Types of data, Data analyst roles, Data analysis lifecycle, Real-world use cases." },
@@ -151,7 +151,7 @@ export const programs: Program[] = [
     description: "A comprehensive program covering everything from programming fundamentals to advanced machine learning and MLOps.",
     longDescription: "This comprehensive Data Science program takes you from the fundamentals of Python and math to advanced topics like deep learning, NLP, and MLOps. You'll gain hands-on experience with the entire data science lifecycle, from data collection and cleaning to model deployment and ethical considerations. The course culminates in a real-world capstone project to solidify your skills and build a professional portfolio.",
     icon: BrainCircuit,
-    image: "https://images.unsplash.com/photo-1555255707-c07969078f64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkYXRhJTIwc2NpZW5jZXxlbnwwfHx8fDE3NjYxMzc0Mjd8MA&ixlib=rb-4.0.3&q=80&w=1080",
+    image: "/program-data-science.jpg",
     imageHint: "data science",
     syllabus: [
         { week: "Module 1", topic: "Introduction to Data Science: Roles, lifecycle, applications, and tools overview." },
@@ -188,7 +188,7 @@ export const programs: Program[] = [
     description: "An in-depth course on AI and Machine Learning, from fundamentals to advanced applications like deep learning and NLP.",
     longDescription: "Dive deep into the world of Artificial Intelligence and Machine Learning. This course covers everything from foundational Python and mathematical concepts to advanced topics like deep learning, natural language processing, computer vision, and reinforcement learning. You'll gain practical, hands-on experience by building, training, and deploying complex models, culminating in a capstone project that prepares you for a career at the forefront of technology.",
     icon: Cpu,
-    image: "https://images.unsplash.com/photo-1620712943543-2858200f7426?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxBSSUyMCUyNiUyME1MfGVufDB8fHx8MTc2NjEzNzUwNnww&ixlib=rb-4.0.3&q=80&w=1080",
+    image: "/program-ai-ml.jpg",
     imageHint: "AI ML",
     syllabus: [
       { week: "Module 1", topic: "Introduction to AI & ML: History, types (Narrow, General, Super), and real-world applications." },
@@ -223,7 +223,7 @@ export const programs: Program[] = [
     description: "An essential guide to understanding and defending against modern cyber threats, from networking basics to ethical hacking.",
     longDescription: "This Cyber Security course provides a comprehensive foundation for anyone looking to enter this critical field. You will learn networking fundamentals, OS security, threat analysis, cryptography, and ethical hacking principles. The program is packed with hands-on labs to give you practical experience in identifying vulnerabilities and securing systems against attacks.",
     icon: Shield,
-    image: "https://images.unsplash.com/photo-1544214234-917369ce7a25?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjeWJlciUyMHNlY3VyaXR5fGVufDB8fHx8MTc2NjEzOTU1OXww&ixlib=rb-4.0.3&q=80&w=1080",
+    image: "/program-cyber-security.jpg",
     imageHint: "cyber security",
     syllabus: [
         { week: "Module 1", topic: "Introduction to Cyber Security: Importance, threats, CIA Triad, and career roles." },
