@@ -1,3 +1,4 @@
+
 "use client";
 
 import * as React from "react";
@@ -23,7 +24,7 @@ import { ArrowRight } from 'lucide-react';
 import { Input } from "@/components/ui/input";
 import type { Program } from "@/lib/programs";
 
-const itProgramSlugs = ["full-stack-development", "ai-machine-learning", "cyber-security-essentials", "marketing-influence-ai"];
+const itProgramSlugs = ["data-analytics-course"];
 
 export default function ITProgramsPage() {
   const [searchTerm, setSearchTerm] = React.useState("");
@@ -49,7 +50,7 @@ export default function ITProgramsPage() {
                 IT Programs
                 </h1>
                 <p className="mx-auto mt-4 max-w-2xl text-muted-foreground md:text-xl">
-                Master the most in-demand skills in the tech industry with our expert-led IT courses in Full-Stack Development, AI, Cyber Security, and Digital Marketing.
+                Master the most in-demand skills in the tech industry with our expert-led IT courses in Data Analytics, Full-Stack Development, AI, and more.
                 </p>
             </div>
         </div>
