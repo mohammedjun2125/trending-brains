@@ -24,7 +24,7 @@ import { ArrowRight } from 'lucide-react';
 import { Input } from "@/components/ui/input";
 import type { Program } from "@/lib/programs";
 
-const itProgramSlugs = ["data-analytics-course", "data-science-course", "artificial-intelligence-machine-learning"];
+const itProgramSlugs = ["data-analytics-course", "data-science-course", "artificial-intelligence-machine-learning", "cyber-security-course"];
 
 export default function ITProgramsPage() {
   const [searchTerm, setSearchTerm] = React.useState("");
@@ -49,7 +49,7 @@ export default function ITProgramsPage() {
                 <h1 className="mt-6 text-4xl font-bold font-headline tracking-tighter sm:text-5xl">
                 IT Programs
                 </h1>
-                <p className="mx-auto mt-4 max-w-2xl text-muted-foreground md:text-xl">
+                <p className="mx-auto mt-4 max-w-2xl text-muted-foreground md:text-xl/relaxed">
                 Master the most in-demand skills in the tech industry with our expert-led IT courses in Data Analytics, Full-Stack Development, AI, and more.
                 </p>
             </div>
