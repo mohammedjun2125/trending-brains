@@ -179,5 +179,40 @@ export const programs: Program[] = [
         "Format": "Online, Project-based",
         "Certification": "Yes, included",
     }
+  },
+  {
+    slug: "artificial-intelligence-machine-learning",
+    title: "Artificial Intelligence & Machine Learning",
+    duration: "6 Months",
+    fee: "₹40000",
+    description: "An in-depth course on AI and Machine Learning, from fundamentals to advanced applications like deep learning and NLP.",
+    longDescription: "Dive deep into the world of Artificial Intelligence and Machine Learning. This course covers everything from foundational Python and mathematical concepts to advanced topics like deep learning, natural language processing, computer vision, and reinforcement learning. You'll gain practical, hands-on experience by building, training, and deploying complex models, culminating in a capstone project that prepares you for a career at the forefront of technology.",
+    icon: Cpu,
+    image: "https://images.unsplash.com/photo-1620712943543-2858200f7426?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxBSSUyMCUyNiUyME1MfGVufDB8fHx8MTc2NjEzNzUwNnww&ixlib=rb-4.0.3&q=80&w=1080",
+    imageHint: "AI ML",
+    syllabus: [
+      { week: "Module 1", topic: "Introduction to AI & Machine Learning: History, types, and real-world applications." },
+      { week: "Module 2", topic: "Programming Foundations: Python, NumPy, SciPy, Pandas, and data visualization." },
+      { week: "Module 3", topic: "Mathematics for AI & ML: Linear algebra, probability, statistics, calculus, and information theory." },
+      { week: "Module 4", topic: "Data Handling & Preparation: Data collection, cleaning, feature engineering, and train-test split." },
+      { week: "Module 5", topic: "Machine Learning Fundamentals: ML workflow, model evaluation, bias-variance tradeoff, and cross-validation." },
+      { week: "Module 6", topic: "Supervised Learning Algorithms: Regression, decision trees, Random Forest, SVM, k-NN." },
+      { week: "Module 7", topic: "Unsupervised Learning Algorithms: Clustering, dimensionality reduction, and association rule learning." },
+      { week: "Module 8", topic: "Ensemble & Advanced ML Techniques: Bagging, boosting, gradient boosting, and model tuning." },
+      { week: "Module 9", topic: "Deep Learning Fundamentals: ANNs, activation functions, backpropagation, and optimizers." },
+      { week: "Module 10", topic: "Deep Learning Architectures: CNNs, RNNs, LSTMs, and Transformers." },
+      { week: "Module 11", topic: "Natural Language Processing (NLP): Text preprocessing, language models, embeddings, and chatbots." },
+      { week: "Module 12", topic: "Computer Vision: Image processing, classification, object detection with OpenCV." },
+      { week: "Module 13", topic: "Reinforcement Learning: MDP, Q-Learning, Deep Q Networks, and applications." },
+      { week: "Module 14", topic: "Model Deployment & MLOps: APIs, cloud deployment, monitoring, and CI/CD for ML." },
+      { week: "Module 15", topic: "Ethics, Bias & Responsible AI: Fairness, explainable AI, privacy, and regulations." },
+      { week: "Module 16", topic: "Capstone Project: End-to-end AI/ML project from problem definition to deployment." },
+    ],
+    details: {
+        "Program Type": "IT Professional Course",
+        "Focus": "AI & Machine Learning",
+        "Format": "Online, Project-based",
+        "Certification": "Yes, included",
+    }
   }
 ];
