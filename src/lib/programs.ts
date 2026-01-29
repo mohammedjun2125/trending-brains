@@ -116,7 +116,7 @@ export const programs: Program[] = [
   {
     slug: "data-analytics-course",
     title: "Data Analytics Course",
-    duration: "4 Months",
+    duration: "6 Months",
     fee: "₹25000",
     description: "Master data analysis from foundations to advanced techniques including Excel, SQL, Python, and data visualization.",
     longDescription: "This comprehensive Data Analytics program is designed to equip you with the job-ready skills needed to become a successful data analyst. You will journey through data foundations, advanced spreadsheet techniques, database querying with SQL, data manipulation with Python, and storytelling with data visualization tools like Tableau or Power BI. The course is packed with real-world case studies and culminates in a capstone project to build your professional portfolio.",
@@ -218,7 +218,7 @@ export const programs: Program[] = [
   {
     slug: "cyber-security-course",
     title: "Cyber Security Course",
-    duration: "5 Months",
+    duration: "6 Months",
     fee: "₹35000",
     description: "An essential guide to understanding and defending against modern cyber threats, from networking basics to ethical hacking.",
     longDescription: "This Cyber Security course provides a comprehensive foundation for anyone looking to enter this critical field. You will learn networking fundamentals, OS security, threat analysis, cryptography, and ethical hacking principles. The program is packed with hands-on labs to give you practical experience in identifying vulnerabilities and securing systems against attacks.",
