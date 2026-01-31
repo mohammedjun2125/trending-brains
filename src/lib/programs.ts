@@ -1,5 +1,5 @@
 
-import { BrainCircuit, BookOpen, Users, BarChart, Star, Palette, CookingPot, Hand, Stethoscope, Briefcase, Shield, Cpu } from "lucide-react";
+import { BrainCircuit, BookOpen, Users, BarChart, Star, Palette, CookingPot, Hand, Stethoscope, Briefcase, Shield, Cpu, Code } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export type Program = {
@@ -266,6 +266,37 @@ export const programs: Program[] = [
         "Program Type": "IT Professional Course",
         "Focus": "Cyber Security & Ethical Hacking",
         "Format": "Online, Lab-based",
+        "Certification": "Yes, included",
+    }
+  },
+  {
+    slug: "python-full-stack-development",
+    title: "Python Full-Stack Development",
+    duration: "6 Months",
+    fee: "₹35000",
+    description: "Become a job-ready Python Full-Stack Developer by mastering frontend and backend technologies with Django and React.",
+    longDescription: "This comprehensive program covers everything you need to become a skilled Python Full-Stack Developer. You'll start with Python fundamentals, move to frontend development with HTML, CSS, JavaScript, and React, then dive deep into backend development with Django. The course emphasizes hands-on projects, including building and deploying a complete web application.",
+    icon: Code,
+    image: "/program-python-full-stack.jpg",
+    imageHint: "full stack code",
+    syllabus: [
+      { week: "Module 1", topic: "Python Fundamentals: Basics, data structures, functions, and Object-Oriented Programming (OOP)." },
+      { week: "Module 2", topic: "Frontend Core Technologies: HTML5, CSS3, Flexbox, Grid, and responsive design principles." },
+      { week: "Module 3", topic: "JavaScript for Web Development: DOM manipulation, ES6+ features, and asynchronous programming." },
+      { week: "Module 4", topic: "React.js for Frontend: Components, state, props, hooks, routing, and state management." },
+      { week: "Module 5", topic: "Backend with Django: MVT architecture, models, ORM, and the Django admin panel." },
+      { week: "Module 6", topic: "Advanced Django: Views, templates, forms, and user authentication systems." },
+      { week: "Module 7", topic: "Building REST APIs: Create robust APIs with Django Rest Framework (DRF)." },
+      { week: "Module 8", topic: "Databases and Data Management: SQL basics and integrating PostgreSQL with Django." },
+      { week: "Module 9", topic: "Version Control: Mastering Git and GitHub for collaborative development." },
+      { week: "Module 10", topic: "Testing Your Application: Unit and integration testing strategies for Django." },
+      { week: "Module 11", topic: "Deployment & DevOps: Containerizing with Docker and deploying to a cloud platform." },
+      { week: "Module 12", topic: "Capstone Project: Build and deploy a complete full-stack web application." },
+    ],
+    details: {
+        "Program Type": "IT Professional Course",
+        "Focus": "Web Development",
+        "Format": "Online, Project-based",
         "Certification": "Yes, included",
     }
   }

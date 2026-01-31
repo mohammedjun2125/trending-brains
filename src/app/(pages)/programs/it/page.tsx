@@ -24,7 +24,7 @@ import { ArrowRight } from 'lucide-react';
 import { Input } from "@/components/ui/input";
 import type { Program } from "@/lib/programs";
 
-const itProgramSlugs = ["data-analytics-course", "data-science-course", "artificial-intelligence-machine-learning", "cyber-security-course"];
+const itProgramSlugs = ["data-analytics-course", "data-science-course", "artificial-intelligence-machine-learning", "cyber-security-course", "python-full-stack-development"];
 
 export default function ITProgramsPage() {
   const [searchTerm, setSearchTerm] = React.useState("");
