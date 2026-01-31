@@ -7,6 +7,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Program } from '@/lib/programs';
+import { ShieldCheck } from 'lucide-react';
 
 export function generateStaticParams() {
   return programs
@@ -91,6 +92,17 @@ export default function ProgramDetailPage({ params }: { params: { slug: string }
             <p className="text-xl text-muted-foreground mt-2">
             {program.longDescription}
             </p>
+             {program.details.Certification === "Government Certified" && (
+                <div className="mt-6">
+                    <div className="inline-flex items-center gap-4 rounded-lg border border-green-600/30 bg-green-500/10 px-6 py-3 text-green-700 dark:border-green-500/40 dark:bg-green-500/20 dark:text-green-300">
+                        <ShieldCheck className="h-10 w-10" />
+                        <div className="text-left">
+                            <p className="text-2xl font-bold font-headline text-foreground">Government Certified</p>
+                            <p className="text-sm text-muted-foreground">This program includes a government-recognized certificate.</p>
+                        </div>
+                    </div>
+                </div>
+            )}
         </header>
 
         <Image
