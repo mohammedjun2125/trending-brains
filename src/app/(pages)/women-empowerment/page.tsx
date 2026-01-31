@@ -16,6 +16,7 @@ import { programs } from "@/lib/programs";
 import { ArrowRight } from "lucide-react";
 import { generateWhatsappLink, WHATSAPP_LINK } from "@/lib/config";
 import type { Metadata } from 'next';
+import { Badge } from "@/components/ui/badge";
 
 export const metadata: Metadata = {
   title: "Women Empowerment & Skill Development Programs | Trending Brains",
@@ -153,6 +154,9 @@ export default function WomenEmpowermentPage() {
                         <Card className="flex flex-col">
                             <CardHeader>
                                 <CardTitle className="font-headline text-2xl">{vocationalProgram.title}</CardTitle>
+                                {vocationalProgram.details.Certification === "Government Certified" && (
+                                    <Badge variant="secondary" className="w-fit my-2">Government Certified</Badge>
+                                )}
                                 <CardDescription>{vocationalProgram.description}</CardDescription>
                                 <div className="flex gap-4 pt-2 text-sm">
                                     <span className="text-muted-foreground">Duration: {vocationalProgram.duration}</span>

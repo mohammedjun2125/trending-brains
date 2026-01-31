@@ -1,3 +1,4 @@
+
 "use client";
 
 import * as React from "react";
@@ -17,15 +18,20 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { CheckCircle, Search } from "lucide-react";
-import { programs } from "@/lib/programs";
+import { programs, type Program } from "@/lib/programs";
 import Link from "next/link";
 import { ArrowRight } from 'lucide-react';
 import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+
+const itProgramSlugs = ["data-analytics-course", "data-science-course", "artificial-intelligence-machine-learning", "cyber-security-course"];
 
 export default function GeneralProgramsPage() {
   const [searchTerm, setSearchTerm] = React.useState("");
 
-  const filteredPrograms = programs.filter(program =>
+  const generalPrograms: Program[] = programs.filter(p => !itProgramSlugs.includes(p.slug));
+
+  const filteredPrograms = generalPrograms.filter(program =>
     program.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     program.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -71,6 +77,9 @@ export default function GeneralProgramsPage() {
               <Card key={program.title} className="flex flex-col">
                 <CardHeader>
                   <CardTitle className="font-headline text-2xl">{program.title}</CardTitle>
+                  {program.details.Certification === "Government Certified" && (
+                     <Badge variant="secondary" className="w-fit">Government Certified</Badge>
+                  )}
                   <CardDescription>{program.description}</CardDescription>
                   <div className="flex flex-col sm:flex-row gap-4 pt-2 text-sm">
                       <span className="text-muted-foreground">Duration: {program.duration}</span>

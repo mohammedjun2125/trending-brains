@@ -72,8 +72,8 @@ export const programs: Program[] = [
     title: "Vocational Training Courses for Women",
     duration: "1 Week",
     fee: "₹4499",
-    description: "Our vocational training programs in India help you master a practical skill and turn your passion into a profession.",
-    longDescription: "Our vocational training courses allow women to choose a specific hands-on skill to develop. Each track provides expert training to help you master your craft, whether for personal enrichment or to start your own small business. Please note: You must choose one stream to specialize in. Certification is provided upon completion.",
+    description: "Our vocational training programs help you master a practical skill and turn your passion into a profession. All courses include Government Certified Certificates.",
+    longDescription: "Our vocational training courses allow women to choose a specific hands-on skill to develop. Each track provides expert training to help you master your craft, whether for personal enrichment or to start your own small business. Please note: You must choose one stream to specialize in. A Government Certified Certificate is provided upon completion.",
     icon: Palette,
     image: "/program-vocational.jpg",
     imageHint: "vocational skills",
@@ -87,7 +87,7 @@ export const programs: Program[] = [
         "Course Level": "Beginner to Intermediate",
         "Prerequisites": "None",
         "Format": "Hands-on, workshop-based",
-        "Certification": "Yes, included",
+        "Certification": "Government Certified",
     }
   },
   {
@@ -111,6 +111,29 @@ export const programs: Program[] = [
         "Focus": "Employability Skills, Career Growth",
         "Format": "Online, interactive sessions",
         "Certification": "Yes, included",
+    }
+  },
+  {
+    slug: "general-vocational-training",
+    title: "Technician Vocational Training",
+    duration: "1 Week",
+    fee: "₹4499",
+    description: "Master a practical technician skill with our hands-on vocational training. All courses include Government Certified Certificates.",
+    longDescription: "Our technician vocational courses provide expert, hands-on training to help you master a craft and start a career as a skilled technician. Choose one stream to specialize in and receive a Government Certified Certificate upon completion.",
+    icon: Briefcase,
+    image: "/program-technician-training.jpg",
+    imageHint: "technician training",
+    syllabus: [
+        { week: "Track 1", topic: "Mobile Technician" },
+        { week: "Track 2", topic: "Hardware Technician" },
+        { week: "Track 3", topic: "Drone Technician" },
+        { week: "Track 4", topic: "CCTV Technician" },
+    ],
+    details: {
+        "Course Level": "Beginner to Intermediate",
+        "Prerequisites": "None",
+        "Format": "Hands-on, workshop-based",
+        "Certification": "Government Certified",
     }
   },
   {
